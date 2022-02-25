@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html style="background-color: black !important;">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pokemon Detalhes</title>
+    </head>
+    <body style="background-color: black !important;">
+        <div fxFlex="100" fxLayoutAlign="start" *ngIf="this.pokemon">
+            <div fxLayoutAlign="star" fxLayout="row wrap" class="card">
+                <div fxLayout="row" >
+                    <img [src]="this.pokemon.images.large" >
+                </div>
+                <div class="details">
+                    <ul>
+                        <li>Nome: {{ this.pokemon.name }}</li>
+                    </ul>
+                    <ul>
+                        <li>ID do Pokemon: {{ this.pokemon.id }}</li>
+                    </ul>                    
+                    <ul>
+                        <li>Tipo(s):</li>
+                    </ul>                    
+                    <mat-chip-list class="mat-chip-list-stacked">
+                        <mat-chip *ngFor="let type of this.pokemon.types" selected color="primary">
+                            {{ type }};
+                        </mat-chip>
+                    </mat-chip-list>
+
+                    <ul>
+                        <li>Resistencia(s):</li>
+                    </ul> 
+                    <mat-chip-list class="mat-chip-list-stacked">
+                        <mat-chip *ngFor="let resistance of this.pokemon.resistances" style="background-color: indigo;" selected>
+                            {{ resistance.type }} {{ resistance.value }}
+                        </mat-chip>
+                    </mat-chip-list>
+
+                    <ul>
+                        <li>Fraqueza(s):</li>
+                    </ul>
+                    <mat-chip-list class="mat-chip-list-stacked">
+                        <mat-chip *ngFor="let weaknesse of this.pokemon.weaknesses" style="background-color: cadetblue;" selected>
+                            {{ weaknesse.type }} {{ weaknesse.value }}
+                        </mat-chip>
+                    </mat-chip-list>
+
+                    <ul>
+                        <li>Ataque(s):</li>
+                    </ul>
+                    <mat-chip-list class="mat-chip-list-stacked">
+                        <mat-chip *ngFor="let attack of this.pokemon.attacks" color="warn" (click)="openDialogAttack(attack)" selected>
+                            {{ attack.name }}
+                        </mat-chip>
+                    </mat-chip-list>
+                    <br /><br /><br /><br />
+                    <mat-chip-list class="mat-chip-list-stacked">
+                        <mat-chip selected [routerLink]="['/']" style="background-color: #B8860B;">
+                            Voltar ao Deck
+                        </mat-chip>
+                    </mat-chip-list>
+                </div>
+            </div>
+        </div>
+        <ngx-loading [show]="loading" [config]="{backdropBorderRadius: '15px'}"></ngx-loading>
+    </body>
+</html>

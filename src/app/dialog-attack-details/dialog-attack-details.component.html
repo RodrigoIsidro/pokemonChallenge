@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Detalhes do Ataque</h1>
+<div mat-dialog-content *ngIf="this.data">
+  <ul>
+    <li>Custo de "mana": {{ this.data.convertedEnergyCost }}</li>
+    <li>Nome: {{ this.data.name }}</li>
+    <li>Dano: {{ this.data.damage }}</li>
+    <li style="text-align: justify;">Descrição: {{ this.data.text }}</li>
+  </ul>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

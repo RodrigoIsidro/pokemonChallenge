@@ -1,0 +1,34 @@
+
+body {
+    height: auto;
+}
+
+.card {
+    padding: 15px;
+    border-style: solid;
+    border-color: #B8860B;
+    border-radius: 15px;
+    background-color: #000;
+}
+
+.details {
+    margin-left: 15px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #FFF;
+}
+
+ul {
+    list-style-type: square;
+    font-family: verdana;
+}
+
+mat-chip {
+    max-width: 240px;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    align-items: center;
+    margin-left: 45px !important;
+}

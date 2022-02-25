@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8"/>
+      <title>Pokemon Detalhes</title>
+  </head>
+  <body>    
+    <cdk-virtual-scroll-viewport appendOnly itemSize="1">
+      <div fxFlex="100" fxLayoutAlign="center center" fxLayout="row wrap" *ngIf="this.pokemons">
+        <div *cdkVirtualFor="let pokemon of this.pokemons;" 
+          class="pokemonCartao" 
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          [routerLink]="['/pokemon-details/' + pokemon.id]"> 
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <img [src]="pokemon.images.small" >
+          </div>
+          <div fxLayoutAlign="center center" fxLayout="row" class="pokemonDetalhes">
+            <ul>
+              <li>Nome: {{ pokemon.name }}</li>
+              <li>Id: {{ pokemon.id }}</li>
+              <li>Tipo(s): {{ pokemon.types }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </cdk-virtual-scroll-viewport>
+    <ngx-loading [show]="loading" [config]="{backdropBorderRadius: '15px'}"></ngx-loading>
+  </body>
+</html>

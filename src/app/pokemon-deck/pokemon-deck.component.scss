@@ -1,0 +1,51 @@
+
+body {
+  background: #000;
+}
+
+.form-field {
+  width: 100%;
+  margin-left: 6%;
+  color: #fff;
+}
+
+mat-label { 
+  color: #B8860B;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+cdk-virtual-scroll-viewport {
+  height:100%; 
+  width:100%;
+}
+
+.pokemonCartao {
+  border-style: solid;
+  border-color: #B8860B;
+  border-radius: 15px;
+  background-color: #000;
+  height:450px;
+  width:262px;
+  margin: 6px;
+}
+
+.pokemonDetalhes {  
+  border-style: solid;
+  border-width: 5px 0 0 0;
+  background-color: #DAA520;
+  border-radius: 14px;
+  width:244px;
+  height:90px;
+}
+
+ul {
+  list-style-type: square;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+  
